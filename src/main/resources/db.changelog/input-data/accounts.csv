@@ -1,0 +1,5 @@
+id,account_number,currency,balance,status
+1,1000123,USD,0.0,OPEN
+2,1000456,USD,1002.0,OPEN
+3,1000789,EUR,345.0,OPEN
+4,1000236,EUR,0.0,CLOSED

@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: 123456789-0
+      author: oleksandr-kibkalo
+      changes:
+        - createTable:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: account_number
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: currency
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: balance
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+                    minValue: 0
+              - column:
+                  name: status
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+        - loadData:
+            encoding: UTF-8
+            file: ../input-data/accounts.csv
+            relativeToChangelogFile: true
+            schemaName: public
+            tableName: accounts
